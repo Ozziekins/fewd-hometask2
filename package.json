@@ -1,12 +1,38 @@
 {
   "name": "hometask2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozziekins/fewd-hometask2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ozziekins/fewd-hometask2/issues"
+  },
+  "homepage": "https://github.com/Ozziekins/fewd-hometask2#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
