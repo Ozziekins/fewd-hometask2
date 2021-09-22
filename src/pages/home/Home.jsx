@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { WelcomePage, Welcome } from '../styles/Pages.styles'
+import { WelcomePage, Welcome, HomeInfo } from '../styles/Pages.styles'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import authService from '../../services/auth.service'
 import userService from '../../services/user.service'
+import PersonCard from '../../components/person/PersonCard'
 
 function Home() {
   const [users, setUsers] = useState([])
@@ -21,11 +22,12 @@ function Home() {
       setLoading(true)
       userService
         .getUsers()
-        .then(({ data }) => setUsers(data))
+        .then((data) => setUsers(data))
         .catch(() => setError('Some error happened'))
         .finally(() => setLoading(false))
     } else {
       // TODO reset users state
+      setUsers([])
     }
   }, [authService.isAuthorized()])
 
@@ -33,13 +35,15 @@ function Home() {
     <div>
       <Header />
       <WelcomePage />
-      <Welcome>Welcome!</Welcome>
+      <Welcome>Welcome! </Welcome>
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
-      {users.map((user) => (
-        // TODO extend template to display all data (besides id)
-        <div key={user.id}>{user.name}</div>
-      ))}
+      <HomeInfo>
+        {users.map((user) => (
+          // TODO extend template to display all data (besides id)
+          <PersonCard key={user.id} {...user} />
+        ))}
+      </HomeInfo>
       <Footer />
     </div>
   )

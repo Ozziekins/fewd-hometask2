@@ -11,7 +11,11 @@ class UserService {
 
   async getUsers() {
     // const response = await axios.get(/* TODO implement get users method, provide token to Authorization header param */)
-    const response = await axios.get(`${this.API_ENDPOINT}/users`, { header: authService.TOKEN })
+    const response = await axios.get(`${this.API_ENDPOINT}/info`, {
+      headers: {
+        Authorization: window.sessionStorage.getItem('Token')
+      }
+    })
 
     return response.data
   }

@@ -1,19 +1,22 @@
 import React from 'react'
 import { NavLink, useHistory } from 'react-router-dom'
-import { HeaderDiv, Logo, LoginOrRegister, Login, Register, Home } from '../ui/Header.styles'
+import { LogoTitle, Title, HeaderDiv, Logo, LoginOrRegister, Login, Register, Home } from '../ui/Header.styles'
 import authService from '../../services/auth.service'
 
 function Header() {
   const history = useHistory()
   const handleLogout = () => {
     authService.logout()
-    history.replace('/')
+    history.replace('/login')
   }
 
   return (
     <div>
       <HeaderDiv>
-        <Logo />
+        <LogoTitle>
+          <Logo />
+          <Title> FEWD Hometask 2</Title>
+        </LogoTitle>
         {!authService.isAuthorized() ? (
           <>
             <LoginOrRegister>
@@ -29,9 +32,11 @@ function Header() {
             </LoginOrRegister>
           </>
         ) : (
-          <NavLink to="" onClick={handleLogout}>
-            Logout
-          </NavLink>
+          <LoginOrRegister>
+            <NavLink to="/login" onClick={handleLogout}>
+              Logout
+            </NavLink>
+          </LoginOrRegister>
         )}
       </HeaderDiv>
     </div>

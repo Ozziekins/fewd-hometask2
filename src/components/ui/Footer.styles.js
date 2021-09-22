@@ -5,7 +5,7 @@ export default createGlobalStyle`
 `
 
 export const FooterDiv = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   background: white;

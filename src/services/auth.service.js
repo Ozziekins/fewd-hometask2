@@ -16,7 +16,7 @@ class AuthService {
     return !!this.TOKEN
   }
 
-  async register(login, password) {
+  async registerUser(login, password) {
     // TODO implement register request similarly to login request
     try {
       const response = await axios.post(`${this.API_ENDPOINT}/register`, { login, password })
@@ -32,11 +32,12 @@ class AuthService {
     }
   }
 
-  async login(login, password) {
+  async loginUser(login, password) {
     try {
       const response = await axios.post(`${this.API_ENDPOINT}/login`, { login, password })
 
       if (response.data?.token) {
+        window.sessionStorage.setItem('Token', response.data.token)
         this.TOKEN = response.data.token
       }
     } catch (e) {

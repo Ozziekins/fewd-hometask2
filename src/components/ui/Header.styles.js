@@ -14,6 +14,12 @@ export const Logo = styled.div`
   float: left;
 `
 
+export const LogoTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+`
+
 export const LoginOrRegister = styled.div`
   display: flex;
   flex-direction: row;
@@ -23,7 +29,7 @@ export const LoginOrRegister = styled.div`
 `
 
 export const HeaderDiv = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: white;
@@ -31,6 +37,16 @@ export const HeaderDiv = styled.div`
   height: auto;
   margin: 0;
   display: flex;
+  padding: 20px;
+`
+
+export const Title = styled.div`
+  color: purple;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: xx-large;
+  margin: auto;
   padding: 20px;
 `
 

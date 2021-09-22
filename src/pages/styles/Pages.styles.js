@@ -116,3 +116,8 @@ export const Welcome = styled.div`
   font-weight: bold;
   font-size: xxx-large;
 `
+
+export const HomeInfo = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
