@@ -1,12 +1,25 @@
-import { hot } from 'react-hot-loader/root'
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Home from './pages/home/Home'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
 
 function App() {
   return (
-    <>
-      <h1>Hello from react 4</h1>
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route>404</Route>
+      </Switch>
+    </BrowserRouter>
   )
 }
-
-export default hot(App)
+export default App

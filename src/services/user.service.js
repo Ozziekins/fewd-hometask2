@@ -10,16 +10,17 @@ class UserService {
   }
 
   async getUsers() {
-    const response = await axios.get(/* TODO implement get users method, provide token to Authorization header param */)
+    // const response = await axios.get(/* TODO implement get users method, provide token to Authorization header param */)
+    const response = await axios.get(`${this.API_ENDPOINT}/users`, { header: authService.TOKEN })
 
     return response.data
   }
 
-  async getUserById(id) {
-    const response = await axios.get(/* TODO implement getUserById if you would implement optional part */)
-
-    return response.headers
-  }
+  // async getUserById(id) {
+  //   const response = await axios.get(/* TODO implement getUserById if you would implement optional part */)
+  //
+  //   return response.headers
+  // }
 }
 
 const userService = new UserService(authService)

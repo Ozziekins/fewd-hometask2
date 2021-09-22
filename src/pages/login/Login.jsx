@@ -1,10 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import authService from '../../services/auth.service'
 import { Card, CardContent, CardTitle, Form, FormContent, ForgotPass, LoginBtn } from '../styles/Pages.styles'
 
 function Login() {
+  const history = useHistory()
+  const [error, setError] = useState()
+  const onSubmit = async ({ login, password }) => {
+    // TODO call login from authService.
+    // Use history.replace to home page if login successes
+    // and set error state if error
+    authService
+      .login(login, password)
+      .then(() => history.replace('/'))
+      .catch(() => setError(error))
+  }
+
   return (
-    <Card>
+    <Card onSubmit={onSubmit} error={error}>
       <CardContent id="card-content">
         <CardTitle id="card-title">
           <h2>Login</h2>
@@ -21,6 +34,7 @@ function Login() {
           <Link to="\" style={{ 'padding-top': '22px', 'text-decoration': 'none' }}>
             <ForgotPass id="forgot-pass">Forgot password?</ForgotPass>
           </Link>
+          {error && <p>{error}</p>}
           <LoginBtn id="login-btn" type="submit" name="submit" value="Login" />
         </Form>
       </CardContent>

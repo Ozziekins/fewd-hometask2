@@ -27,6 +27,7 @@ module.exports = {
     'no-unused-vars': 1,
     'react/no-array-index-key': 0,
     'no-debugger': 1,
-    'no-param-reassign': [2, { props: false }]
+    'no-param-reassign': [2, { props: false }],
+    'no-shadow': 0
   }
 }
