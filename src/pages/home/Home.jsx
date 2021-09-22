@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { WelcomePage, Welcome, HomeInfo } from '../styles/Pages.styles'
+import { WelcomePage, HomeInfo } from '../styles/Pages.styles'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
 import authService from '../../services/auth.service'
@@ -35,10 +35,9 @@ function Home() {
     <div>
       <Header />
       <WelcomePage />
-      <Welcome>Welcome! </Welcome>
-      {loading && <div>Loading...</div>}
-      {error && <div>{error}</div>}
       <HomeInfo>
+        {loading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
         {users.map((user) => (
           // TODO extend template to display all data (besides id)
           <PersonCard key={user.id} {...user} />

@@ -6,12 +6,11 @@ export default createGlobalStyle`
 
 export const PersonCardStyle = styled.div`
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 1px solid grey;
   height: 100%;
   padding: 10px;
-  width: 350px;
-  flex: 1 0 21%; /* explanation below */
+  width: 400px;
 `
 
 export const PersonCardItem = styled.div`

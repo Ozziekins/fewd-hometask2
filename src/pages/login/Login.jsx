@@ -19,7 +19,10 @@ function Login() {
 
     authService
       .loginUser(login, password)
-      .then(() => history.replace('/home'))
+      .then(() => {
+        window.sessionStorage.setItem('isLoggedIn', true)
+        history.replace('/home')
+      })
       .catch(() => setError(error))
 
     // try {

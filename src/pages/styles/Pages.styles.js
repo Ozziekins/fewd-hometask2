@@ -118,6 +118,12 @@ export const Welcome = styled.div`
 `
 
 export const HomeInfo = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  padding-top: 1050px;
+  padding-bottom: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto-fill, 120px);
+  grid-row-gap: 2.5em;
+  grid-column-gap: 1em;
 `

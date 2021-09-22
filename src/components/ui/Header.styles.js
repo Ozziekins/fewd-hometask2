@@ -79,3 +79,13 @@ export const Home = styled.div`
   margin: auto;
   padding: 20px;
 `
+
+export const Logout = styled.div`
+  color: blueviolet;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  cursor: pointer;
+  margin: auto;
+  padding: 20px;
+`
