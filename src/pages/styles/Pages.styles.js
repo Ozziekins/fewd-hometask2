@@ -118,7 +118,7 @@ export const Welcome = styled.div`
 `
 
 export const HomeInfo = styled.div`
-  padding-top: 1050px;
+  padding-top: 750px;
   padding-bottom: 100px;
   width: 100%;
   display: grid;
