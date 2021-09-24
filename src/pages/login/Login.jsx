@@ -60,7 +60,7 @@ function Login() {
             value={password}
             label="Password"
             type="password"
-            rules={{ required: { message: 'Login is required', value: true } }}
+            rules={{ required: { message: 'Password is required', value: true } }}
             onChange={({ target }) => setPassword(target.value)}
           />
           <Link to="\" style={{ paddingTop: '22px', textDecoration: 'none' }}>

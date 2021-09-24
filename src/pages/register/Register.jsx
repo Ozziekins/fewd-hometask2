@@ -57,7 +57,7 @@ function Register() {
             value={password}
             label="Password"
             type="password"
-            rules={{ required: { message: 'Login is required', value: true } }}
+            rules={{ required: { message: 'Password is required', value: true, minLength: 8 } }}
             onChange={({ target }) => setPassword(target.value)}
           />
           {error && <p>{error}</p>}
